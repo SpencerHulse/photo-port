@@ -4,6 +4,8 @@
 
 This is a simple single-page React app that uses a basic component structure and setup. It is a SPA, and it also utilizes state for a controlled contact form. Additionally, there are tests added to the project to easily check the state of the app after changes are made.
 
+A live version of the app can be found on [Heroku](https://spencer-photo-port.herokuapp.com/).
+
 ## Table of Contents
 
 - [Installation](#installation)
