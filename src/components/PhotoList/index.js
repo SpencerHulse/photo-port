@@ -1,5 +1,5 @@
 import { useState } from "react";
-// import Modal from "../Modal";
+import Modal from "../Modal";
 
 // If not destructured, it would be props.category
 function PhotoList({ category }) {
@@ -122,8 +122,11 @@ function PhotoList({ category }) {
 
   const currentPhotos = photos.filter((photo) => photo.category === category);
 
+  function toggleModal(image, i) {}
+
   return (
     <div>
+      <Modal />
       <div className="flex-row">
         {currentPhotos.map((image, i) => (
           <img
@@ -131,6 +134,7 @@ function PhotoList({ category }) {
             alt={image.name}
             className="img-thumbnail mx-1"
             key={image.name}
+            onClick={() => toggleModal(image, i)}
           />
         ))}
       </div>
