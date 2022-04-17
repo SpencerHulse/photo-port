@@ -22,18 +22,29 @@ function App() {
 
   // App-level state that uses the categories setter to hold the array and default to commercial
   const [currentCategory, setCurrentCategory] = useState(categories[0]);
+  const [contactSelected, setContactSelected] = useState(false);
 
   return (
     <div>
       <Nav
         categories={categories}
-        setCurrentCategory={setCurrentCategory}
         currentCategory={currentCategory}
+        setCurrentCategory={setCurrentCategory}
+        contactSelected={contactSelected}
+        setContactSelected={setContactSelected}
       />
       <main>
-        <ContactForm />
-        <Gallery currentCategory={currentCategory} />
-        <About />
+        {/* Tertiary if/else statement */}
+        {!contactSelected ? (
+          /* <> and </> are React fragments that allow multiple elements 
+          to be grouped since JSX can only return a single element */
+          <>
+            <Gallery currentCategory={currentCategory}></Gallery>
+            <About></About>
+          </>
+        ) : (
+          <ContactForm></ContactForm>
+        )}
       </main>
     </div>
   );
